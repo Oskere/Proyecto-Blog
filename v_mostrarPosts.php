@@ -1,5 +1,8 @@
 <?php
-require('c_mostrarUsuarios.php')
+require('c_mostrarPosts.php');
+if($kind != 2){
+    header("Location: c_PaginaPrincipal.php");
+}
 ?>
 <html>
 <head> 
@@ -27,17 +30,16 @@ require('c_mostrarUsuarios.php')
     </head>
     <body>
     <div style="width:140px; height:20px; border:1px solid black; text-align:center; margin:auto; margin-bottom:40px;">
-    <b>Tabla de usuarios</b>
+    <b>Tabla de posts</b>
     <br><br>
 	</div>
     <body>
 <html>
 <?php
 echo '<table>';
-echo ('<tr><td>ID</td><td>Nombre</td><td>Apellido</td><td>Nombre de usuario</td><td>Correo electrónico</td><td>contraseña</td><td>Imagen</td><td>Estatus</td><td>Tipo de usuario</td><td>Fecha de creación</td></tr>');
+echo ('<tr><td>ID</td><td>Titulo</td><td>Resumen</td><td>Imagen</td><td>Fecha de creación</td><td>Estatus</td><td>ID de usuario</td><td></td></tr>');
 while ($row = $resultado->fetch_assoc()) {
-    echo('<tr><td>'.$row['id'].'</td><td>'.$row['name'].'</td><td>'.$row['lastname'].'</td><td>'.$row['username'].'</td><td>'.$row['email'].'</td><td>'.$row['password'].'</td><td><img style="width:100px;height:75px;" src="'.$row['image'].'"></td><td>'.$row['status'].'</td><td>'.$row['kind'].'</td><td>'.$row['created_at'].'</td></tr>');    
-    
+    echo('<tr><td>'.$row['id'].'</td><td>'.$row['title'].'</td><td>'.$row['brief'].'</td><td><img style="width:75px; height:75px;" src="'.$row['image'].'"></td><td>'.$row['created_at'].'</td><td>'.$row['status'].'</td><td>'.$row['user_id'].'</td><td><a href="eliminarPost.php?id='.$row['id'].'">Eliminar post</a></td></tr>');    
 }
 echo "</table>";
 ?>

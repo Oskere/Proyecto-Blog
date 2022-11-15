@@ -17,13 +17,13 @@
                     justify-content: center;
                     align-items: center;
                     min-height: 100vh;
-                    background-image: url("patos2.png");
+                    background-image: url("patos.png");
                     background-size: cover;
                 }
                 .box {
                     position: relative;
                     width: 380px;
-                    height: 690px;
+                    height: 420px;
                     border-radius: 8px;
                     background: #1c1c1c;
                     overflow: hidden;
@@ -34,10 +34,10 @@
                     top: -50%;
                     left: -50%;
                     width: 380px;
-                    height: 690px;
+                    height: 420px;
                     background: linear-gradient(0deg, transparent, #008f39, #008f39);
                     transform-origin: bottom right;
-                    animation: animate 20s linear infinite;
+                    animation: animate 6s linear infinite;
                 }
                 .box::after{
                     content: '';
@@ -45,10 +45,10 @@
                     top: -50%;
                     left: -50%;
                     width: 380px;
-                    height: 690px;
-                    background: linear-gradient(90deg, transparent, #008f39, #008f39);
-                    transform-origin: bottom left;
-                    animation: animate 20s linear infinite;
+                    height: 420px;
+                    background: linear-gradient(0deg, transparent, #008f39, #008f39);
+                    transform-origin: bottom right;
+                    animation: animate 6s linear infinite;
                     animation-delay: -3s;
                 }
                 @keyframes animate {
@@ -129,6 +129,7 @@
                     justify-content: space-between;
                 }
                 .links a {
+                    margin: 10px 0;
                     font-size: 00.75em;
                     color: #8f8f8f;
                     text-decoration: none;
@@ -152,49 +153,24 @@
                 input[type='submit']:active {
                     opacity: 0.8;
                 }
-                #confi{
-                    color: white;
-                    margin-top: 2px;
-                }
         </style>
     </head>
     <body>
 		<div class="box">
-			<form class="form" action="registrar.php" method="get">
-					 <h2>Sign In</h2>
-				<div class="inputBox">
-                    <input type="text" required="required" name="name">
-                    <span>Nombre</span>
-                    <i></i>
-                </div>
-                <div class="inputBox">
-                    <input type="text" required="required" name="lastname">
-                    <span>Apellido</span>
-                    <i></i>
-                </div>
+			<form class="form" action="login.php" method="get">
+					 <h2>Login</h2>
                 <div class="inputBox">
                     <input type="text" required="required" name="username">
-                    <span>Nombre de Usuario</span>
-                    <i></i>
-                </div>
-                <div class="inputBox">
-                    <input type="text" required="required" name="email">
-                    <span>Email</span>
+                    <span>Username</span>
                     <i></i>
                 </div>
                 <div class="inputBox">
                     <input type="password" required="required" name="password">
-                    <span>Contraseña</span>
+                    <span>Password</span>
                     <i></i>
                 </div>
-                <div class="inputBox">
-                    <input type="text" required="required" name="image">
-                    <span>Link a tu Imagen</span>
-                    <i></i>
-                </div>
-                <b id="confi">Ya estas registrado?</b> <br>
                 <div class="links">
-                    <a href="V_LogIn.php">Quack In</a>
+                    <a href="v_signin.php">Quack Up</a>
                 </div>
                 <input type="submit" value="Login">
 			</form>
